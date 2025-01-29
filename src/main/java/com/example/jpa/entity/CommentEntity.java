@@ -2,6 +2,8 @@ package com.example.jpa.entity;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,6 +36,7 @@ public class CommentEntity {
 
     @ManyToOne
     @JoinColumn(name = "article_id", nullable = false)
+    @JsonBackReference
     private ArticleEntity article;
 
     @Column(name = "content", length = 500, nullable = false)

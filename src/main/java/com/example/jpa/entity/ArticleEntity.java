@@ -3,6 +3,8 @@ package com.example.jpa.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -49,5 +51,6 @@ public class ArticleEntity {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "article")
+    @JsonManagedReference
     private List<CommentEntity> commentList;
 }

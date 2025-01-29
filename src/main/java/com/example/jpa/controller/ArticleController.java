@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.jpa.dto.ArticleDTO;
 import com.example.jpa.dto.ArticleWithCommentDTO;
-import com.example.jpa.entity.ArticleEntity;
 import com.example.jpa.service.ArticleService;
 
 import lombok.RequiredArgsConstructor;
@@ -21,7 +21,7 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @GetMapping
-    public Page<ArticleEntity> findAll(
+    public Page<ArticleDTO> findAll(
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
 
